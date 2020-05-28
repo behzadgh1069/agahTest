@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{recpie.imagePath}}" alt="" class="img-responsive">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{recpie.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="btn-group" appDropdown>
+    <button class="btn btn-primary dropdown-toggle">مدیریت  محصولات<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a style="cursor: pointer" (click)="addToShoppingList()">افزودن به لیست خرید </a></li>
+      <li><a style="cursor: pointer" (click)="onEditRecipe()">ویرایش  </a></li>
+      <li><a style="cursor: pointer" (click)="onDelete()">حذف  </a></li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">{{recpie.description}}</div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h3>محصول</h3>
+    <ul class="list-group" style="direction: rtl;">
+      <li class="list-group-item" *ngFor="let ingredient of recpie.ingredients">
+        {{ingredient.name}} ({{ingredient.amount}})
+      </li>
+    </ul>
+  </div>
+</div>
